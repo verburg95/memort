@@ -46,9 +46,7 @@
             this.Card2 = new System.Windows.Forms.PictureBox();
             this.DupCard1 = new System.Windows.Forms.PictureBox();
             this.Card1 = new System.Windows.Forms.PictureBox();
-            this.lbl_score1 = new System.Windows.Forms.Label();
             this.lbl_scorecounter1 = new System.Windows.Forms.Label();
-            this.lbl_score2 = new System.Windows.Forms.Label();
             this.lbl_scorecounter2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
@@ -57,6 +55,13 @@
             this.resetknop = new System.Windows.Forms.Button();
             this.btn_savemenu = new System.Windows.Forms.Button();
             this.labelBeurt = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.StreakTeller = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.StreakRecordTeller = new System.Windows.Forms.Label();
+            this.labelRecordhouder = new System.Windows.Forms.Label();
             this.pnl_CardHolder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DupCard8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Card8)).BeginInit();
@@ -291,43 +296,23 @@
             this.Card1.Tag = "1";
             this.Card1.Click += new System.EventHandler(this.Card1_Click);
             // 
-            // lbl_score1
-            // 
-            this.lbl_score1.AutoSize = true;
-            this.lbl_score1.Font = new System.Drawing.Font("Forte", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_score1.Location = new System.Drawing.Point(918, 42);
-            this.lbl_score1.Name = "lbl_score1";
-            this.lbl_score1.Size = new System.Drawing.Size(95, 15);
-            this.lbl_score1.TabIndex = 1;
-            this.lbl_score1.Text = "Score Player 1:";
-            // 
             // lbl_scorecounter1
             // 
             this.lbl_scorecounter1.AutoSize = true;
-            this.lbl_scorecounter1.Font = new System.Drawing.Font("Forte", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_scorecounter1.Font = new System.Drawing.Font("Forte", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_scorecounter1.Location = new System.Drawing.Point(1028, 42);
             this.lbl_scorecounter1.Name = "lbl_scorecounter1";
-            this.lbl_scorecounter1.Size = new System.Drawing.Size(14, 15);
+            this.lbl_scorecounter1.Size = new System.Drawing.Size(18, 19);
             this.lbl_scorecounter1.TabIndex = 2;
             this.lbl_scorecounter1.Text = "0";
-            // 
-            // lbl_score2
-            // 
-            this.lbl_score2.AutoSize = true;
-            this.lbl_score2.Font = new System.Drawing.Font("Forte", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_score2.Location = new System.Drawing.Point(918, 72);
-            this.lbl_score2.Name = "lbl_score2";
-            this.lbl_score2.Size = new System.Drawing.Size(96, 15);
-            this.lbl_score2.TabIndex = 3;
-            this.lbl_score2.Text = "Score Player 2:";
             // 
             // lbl_scorecounter2
             // 
             this.lbl_scorecounter2.AutoSize = true;
-            this.lbl_scorecounter2.Font = new System.Drawing.Font("Forte", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_scorecounter2.Font = new System.Drawing.Font("Forte", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_scorecounter2.Location = new System.Drawing.Point(1028, 72);
             this.lbl_scorecounter2.Name = "lbl_scorecounter2";
-            this.lbl_scorecounter2.Size = new System.Drawing.Size(14, 15);
+            this.lbl_scorecounter2.Size = new System.Drawing.Size(18, 19);
             this.lbl_scorecounter2.TabIndex = 4;
             this.lbl_scorecounter2.Text = "0";
             // 
@@ -369,25 +354,100 @@
             // labelBeurt
             // 
             this.labelBeurt.AutoSize = true;
-            this.labelBeurt.Font = new System.Drawing.Font("Forte", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBeurt.Font = new System.Drawing.Font("Forte", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBeurt.Location = new System.Drawing.Point(918, 15);
             this.labelBeurt.Name = "labelBeurt";
-            this.labelBeurt.Size = new System.Drawing.Size(147, 15);
+            this.labelBeurt.Size = new System.Drawing.Size(178, 19);
             this.labelBeurt.TabIndex = 22;
             this.labelBeurt.Text = "Speler 1 is aan de beurt";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Forte", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(936, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 19);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Forte", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(939, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 19);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "label2";
+            // 
+            // StreakTeller
+            // 
+            this.StreakTeller.AutoSize = true;
+            this.StreakTeller.Font = new System.Drawing.Font("Forte", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StreakTeller.Location = new System.Drawing.Point(1078, 110);
+            this.StreakTeller.Name = "StreakTeller";
+            this.StreakTeller.Size = new System.Drawing.Size(18, 19);
+            this.StreakTeller.TabIndex = 25;
+            this.StreakTeller.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Forte", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(918, 110);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 19);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Huidige streak:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Forte", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(918, 160);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(125, 19);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Hoogste streak:";
+            // 
+            // StreakRecordTeller
+            // 
+            this.StreakRecordTeller.AutoSize = true;
+            this.StreakRecordTeller.Font = new System.Drawing.Font("Forte", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StreakRecordTeller.Location = new System.Drawing.Point(1077, 160);
+            this.StreakRecordTeller.Name = "StreakRecordTeller";
+            this.StreakRecordTeller.Size = new System.Drawing.Size(18, 19);
+            this.StreakRecordTeller.TabIndex = 28;
+            this.StreakRecordTeller.Text = "0";
+            // 
+            // labelRecordhouder
+            // 
+            this.labelRecordhouder.AutoSize = true;
+            this.labelRecordhouder.Font = new System.Drawing.Font("Forte", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRecordhouder.Location = new System.Drawing.Point(913, 179);
+            this.labelRecordhouder.Name = "labelRecordhouder";
+            this.labelRecordhouder.Size = new System.Drawing.Size(86, 19);
+            this.labelRecordhouder.TabIndex = 30;
+            this.labelRecordhouder.Text = "(Niemand)";
             // 
             // Memory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1147, 953);
+            this.Controls.Add(this.labelRecordhouder);
+            this.Controls.Add(this.StreakRecordTeller);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.StreakTeller);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelBeurt);
             this.Controls.Add(this.btn_savemenu);
             this.Controls.Add(this.resetknop);
             this.Controls.Add(this.lbl_scorecounter2);
-            this.Controls.Add(this.lbl_score2);
             this.Controls.Add(this.lbl_scorecounter1);
-            this.Controls.Add(this.lbl_score1);
             this.Controls.Add(this.pnl_CardHolder);
             this.Name = "Memory";
             this.Text = "Memory";
@@ -419,7 +479,6 @@
 
         private System.Windows.Forms.Panel pnl_CardHolder;
         private System.Windows.Forms.PictureBox Card1;
-        private System.Windows.Forms.Label lbl_score1;
         private System.Windows.Forms.Label lbl_scorecounter1;
         private System.Windows.Forms.PictureBox DupCard8;
         private System.Windows.Forms.PictureBox Card8;
@@ -436,7 +495,6 @@
         private System.Windows.Forms.PictureBox DupCard2;
         private System.Windows.Forms.PictureBox Card2;
         private System.Windows.Forms.PictureBox DupCard1;
-        private System.Windows.Forms.Label lbl_score2;
         private System.Windows.Forms.Label lbl_scorecounter2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
@@ -445,6 +503,13 @@
         private System.Windows.Forms.Button resetknop;
         private System.Windows.Forms.Button btn_savemenu;
         private System.Windows.Forms.Label labelBeurt;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label StreakTeller;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label StreakRecordTeller;
+        private System.Windows.Forms.Label labelRecordhouder;
     }
 }
 

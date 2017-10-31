@@ -17,13 +17,19 @@ namespace Project_SoftwareOntwikkeling
         int scorespeler1 = 0;
         int scorespeler2 = 0;
         int beurt = 1;
-        public string naam1, naam2;
+        public string naam1 = "Speler 1";
+        public string naam2 = "Speler 2";
+        int streak = 0;
+        int hoogstestreak = 0;
+        string recordhouder;
+        
         
         Random locatie = new Random(); //Kiest een willekeurig getal van de X en Y lijsten en geeft zo aan de kaarten een locatie
         List<Point> locaties = new List<Point>(); // Lijst die gevuld word door VulLijst() met locaties van pictureboxes
         PictureBox Opslagbox1, Opslagbox2; // Opslag voor kaarten die open moeten blijven
+        
         #endregion
-
+        
         public Memory()
         {
             InitializeComponent();
@@ -35,7 +41,7 @@ namespace Project_SoftwareOntwikkeling
         timer1.Stop(); //Stopt timer1 zodat de foreach loop niet constant door uitgevoerd word
             foreach (PictureBox picture in pnl_CardHolder.Controls)
             { 
-                picture.Cursor = Cursors.Hand; // Verandert voor elke kaart de cursos in een hand
+                picture.Cursor = Cursors.Hand; // Verandert voor elke kaart de cursor in een hand
                 
             }
         }
@@ -46,6 +52,7 @@ namespace Project_SoftwareOntwikkeling
         }
         private void timer3_Tick(object sender, EventArgs e) // Timer die start bij een match van 2 kaarten.
         {
+
             timer3.Stop();
             Opslagbox1.Image = Properties.Resources.Cover2;//Verandert de images weer naar de cover als ze niet geli 
             Opslagbox2.Image = Properties.Resources.Cover2;
@@ -54,11 +61,11 @@ namespace Project_SoftwareOntwikkeling
             beurt = -beurt; //verandert de beurt
             if (beurt == 1)
             {
-                labelBeurt.Text = "Speler 1 is aan de beurt";
+                labelBeurt.Text = naam1 + " is aan de beurt";
             }
             else if (beurt == -1)
             {
-                labelBeurt.Text = "Speler 2 is aan de beurt";
+                labelBeurt.Text = naam2 + " is aan de beurt";
             }
 
         }
@@ -70,6 +77,7 @@ namespace Project_SoftwareOntwikkeling
             if(Opslagbox1 == null)
             {
                 Opslagbox1 = Card1;
+                Opslagbox1.Enabled = false;
             }
             else if(Opslagbox1 != null && Opslagbox2 == null)
             {
@@ -79,6 +87,10 @@ namespace Project_SoftwareOntwikkeling
             {
                 if(Opslagbox1.Tag == Opslagbox2.Tag)
                 {
+                    streak++;
+                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "("+recordhouder+")"; }
+                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
+                    StreakTeller.Text = Convert.ToString(streak);
                     Opslagbox1 = null;
                     Opslagbox2 = null;
                     Card1.Enabled = false;
@@ -93,9 +105,13 @@ namespace Project_SoftwareOntwikkeling
                         scorespeler2++;
                         lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
                     }
+                    Winnaarfeliciteren();
                 }
                 else
                 {
+                    streak = 0;
+                    StreakTeller.Text = Convert.ToString(streak);
+                    Opslagbox1.Enabled = true;
                     timer3.Start();
                 }
                
@@ -108,6 +124,7 @@ namespace Project_SoftwareOntwikkeling
             if (Opslagbox1 == null)
             {
                 Opslagbox1 = DupCard1;
+                Opslagbox1.Enabled = false;
             }
             else if (Opslagbox1 != null && Opslagbox2 == null)
             {
@@ -117,6 +134,10 @@ namespace Project_SoftwareOntwikkeling
             {
                 if (Opslagbox1.Tag == Opslagbox2.Tag)
                 {
+                    streak++;
+                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
+                    StreakTeller.Text = Convert.ToString(streak);
+                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
                     Opslagbox1 = null;
                     Opslagbox2 = null;
                     Card1.Enabled = false;
@@ -131,9 +152,13 @@ namespace Project_SoftwareOntwikkeling
                         scorespeler2++;
                         lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
                     }
+                    Winnaarfeliciteren();
                 }
                 else
                 {
+                    streak = 0;
+                    StreakTeller.Text = Convert.ToString(streak);
+                    Opslagbox1.Enabled = true;
                     timer3.Start();
                 }
                 
@@ -146,6 +171,7 @@ namespace Project_SoftwareOntwikkeling
             if (Opslagbox1 == null)
             {
                 Opslagbox1 = Card2;
+                Opslagbox1.Enabled = false;
             }
             else if (Opslagbox1 != null && Opslagbox2 == null)
             {
@@ -155,6 +181,10 @@ namespace Project_SoftwareOntwikkeling
             {
                 if (Opslagbox1.Tag == Opslagbox2.Tag)
                 {
+                    streak++;
+                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
+                    StreakTeller.Text = Convert.ToString(streak);
+                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
                     Opslagbox1 = null;
                     Opslagbox2 = null;
                     Card2.Enabled = false;
@@ -169,9 +199,13 @@ namespace Project_SoftwareOntwikkeling
                         scorespeler2++;
                         lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
                     }
+                    Winnaarfeliciteren();
                 }
                 else
                 {
+                    streak = 0;
+                    StreakTeller.Text = Convert.ToString(streak);
+                    Opslagbox1.Enabled = true;
                     timer3.Start();
                 }
                 
@@ -184,6 +218,7 @@ namespace Project_SoftwareOntwikkeling
             if (Opslagbox1 == null)
             {
                 Opslagbox1 = DupCard2;
+                Opslagbox1.Enabled = false;
             }
             else if (Opslagbox1 != null && Opslagbox2 == null)
             {
@@ -193,6 +228,10 @@ namespace Project_SoftwareOntwikkeling
             {
                 if (Opslagbox1.Tag == Opslagbox2.Tag)
                 {
+                    streak++;
+                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
+                    StreakTeller.Text = Convert.ToString(streak);
+                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
                     Opslagbox1 = null;
                     Opslagbox2 = null;
                     Card2.Enabled = false;
@@ -207,9 +246,13 @@ namespace Project_SoftwareOntwikkeling
                         scorespeler2++;
                         lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
                     }
+                    Winnaarfeliciteren();
                 }
                 else
                 {
+                    streak = 0;
+                    StreakTeller.Text = Convert.ToString(streak);
+                    Opslagbox1.Enabled = true;
                     timer3.Start();
                 }
                 
@@ -222,6 +265,7 @@ namespace Project_SoftwareOntwikkeling
             if (Opslagbox1 == null)
             {
                 Opslagbox1 = Card3;
+                Opslagbox1.Enabled = false;
             }
             else if (Opslagbox1 != null && Opslagbox2 == null)
             {
@@ -231,6 +275,10 @@ namespace Project_SoftwareOntwikkeling
             {
                 if (Opslagbox1.Tag == Opslagbox2.Tag)
                 {
+                    streak++;
+                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
+                    StreakTeller.Text = Convert.ToString(streak);
+                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
                     Opslagbox1 = null;
                     Opslagbox2 = null;
                     Card3.Enabled = false;
@@ -245,9 +293,13 @@ namespace Project_SoftwareOntwikkeling
                         scorespeler2++;
                         lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
                     }
+                    Winnaarfeliciteren();
                 }
                 else
                 {
+                    streak = 0;
+                    StreakTeller.Text = Convert.ToString(streak);
+                    Opslagbox1.Enabled = true;
                     timer3.Start();
                 }
             }
@@ -259,6 +311,7 @@ namespace Project_SoftwareOntwikkeling
             if (Opslagbox1 == null)
             {
                 Opslagbox1 = DupCard3;
+                Opslagbox1.Enabled = false;
             }
             else if (Opslagbox1 != null && Opslagbox2 == null)
             {
@@ -268,6 +321,10 @@ namespace Project_SoftwareOntwikkeling
             {
                 if (Opslagbox1.Tag == Opslagbox2.Tag)
                 {
+                    streak++;
+                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
+                    StreakTeller.Text = Convert.ToString(streak);
+                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
                     Opslagbox1 = null;
                     Opslagbox2 = null;
                     Card3.Enabled = false;
@@ -282,9 +339,13 @@ namespace Project_SoftwareOntwikkeling
                         scorespeler2++;
                         lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
                     }
+                    Winnaarfeliciteren();
                 }
                 else
                 {
+                    streak = 0;
+                    StreakTeller.Text = Convert.ToString(streak);
+                    Opslagbox1.Enabled = true;
                     timer3.Start();
                 }
             }
@@ -296,6 +357,7 @@ namespace Project_SoftwareOntwikkeling
             if (Opslagbox1 == null)
             {
                 Opslagbox1 = Card4;
+                Opslagbox1.Enabled = false;
             }
             else if (Opslagbox1 != null && Opslagbox2 == null)
             {
@@ -305,6 +367,10 @@ namespace Project_SoftwareOntwikkeling
             {
                 if (Opslagbox1.Tag == Opslagbox2.Tag)
                 {
+                    streak++;
+                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
+                    StreakTeller.Text = Convert.ToString(streak);
+                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
                     Opslagbox1 = null;
                     Opslagbox2 = null;
                     Card4.Enabled = false;
@@ -319,9 +385,13 @@ namespace Project_SoftwareOntwikkeling
                         scorespeler2++;
                         lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
                     }
+                    Winnaarfeliciteren();
                 }
                 else
                 {
+                    streak = 0;
+                    StreakTeller.Text = Convert.ToString(streak);
+                    Opslagbox1.Enabled = true;
                     timer3.Start();
                 }
             }
@@ -333,6 +403,7 @@ namespace Project_SoftwareOntwikkeling
             if (Opslagbox1 == null)
             {
                 Opslagbox1 = DupCard4;
+                Opslagbox1.Enabled = false;
             }
             else if (Opslagbox1 != null && Opslagbox2 == null)
             {
@@ -342,6 +413,10 @@ namespace Project_SoftwareOntwikkeling
             {
                 if (Opslagbox1.Tag == Opslagbox2.Tag)
                 {
+                    streak++;
+                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
+                    StreakTeller.Text = Convert.ToString(streak);
+                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
                     Opslagbox1 = null;
                     Opslagbox2 = null;
                     Card4.Enabled = false;
@@ -356,9 +431,13 @@ namespace Project_SoftwareOntwikkeling
                         scorespeler2++;
                         lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
                     }
+                    Winnaarfeliciteren();
                 }
                 else
                 {
+                    streak = 0;
+                    StreakTeller.Text = Convert.ToString(streak);
+                    Opslagbox1.Enabled = true;
                     timer3.Start();
                 }
             }
@@ -370,6 +449,7 @@ namespace Project_SoftwareOntwikkeling
             if (Opslagbox1 == null)
             {
                 Opslagbox1 = Card5;
+                Opslagbox1.Enabled = false;
             }
             else if (Opslagbox1 != null && Opslagbox2 == null)
             {
@@ -379,6 +459,10 @@ namespace Project_SoftwareOntwikkeling
             {
                 if (Opslagbox1.Tag == Opslagbox2.Tag)
                 {
+                    streak++;
+                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
+                    StreakTeller.Text = Convert.ToString(streak);
+                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
                     Opslagbox1 = null;
                     Opslagbox2 = null;
                     Card5.Enabled = false;
@@ -393,9 +477,13 @@ namespace Project_SoftwareOntwikkeling
                         scorespeler2++;
                         lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
                     }
+                    Winnaarfeliciteren();
                 }
                 else
                 {
+                    streak = 0;
+                    StreakTeller.Text = Convert.ToString(streak);
+                    Opslagbox1.Enabled = true;
                     timer3.Start();
                 }
             }
@@ -407,6 +495,7 @@ namespace Project_SoftwareOntwikkeling
             if (Opslagbox1 == null)
             {
                 Opslagbox1 = DupCard5;
+                Opslagbox1.Enabled = false;
             }
             else if (Opslagbox1 != null && Opslagbox2 == null)
             {
@@ -416,6 +505,10 @@ namespace Project_SoftwareOntwikkeling
             {
                 if (Opslagbox1.Tag == Opslagbox2.Tag)
                 {
+                    streak++;
+                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
+                    StreakTeller.Text = Convert.ToString(streak);
+                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
                     Opslagbox1 = null;
                     Opslagbox2 = null;
                     Card5.Enabled = false;
@@ -430,9 +523,13 @@ namespace Project_SoftwareOntwikkeling
                         scorespeler2++;
                         lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
                     }
+                    Winnaarfeliciteren();
                 }
                 else
                 {
+                    streak = 0;
+                    StreakTeller.Text = Convert.ToString(streak);
+                    Opslagbox1.Enabled = true;
                     timer3.Start();
                 }
             }
@@ -444,6 +541,7 @@ namespace Project_SoftwareOntwikkeling
             if (Opslagbox1 == null)
             {
                 Opslagbox1 = Card6;
+                Opslagbox1.Enabled = false;
             }
             else if (Opslagbox1 != null && Opslagbox2 == null)
             {
@@ -453,6 +551,10 @@ namespace Project_SoftwareOntwikkeling
             {
                 if (Opslagbox1.Tag == Opslagbox2.Tag)
                 {
+                    streak++;
+                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
+                    StreakTeller.Text = Convert.ToString(streak);
+                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
                     Opslagbox1 = null;
                     Opslagbox2 = null;
                     Card6.Enabled = false;
@@ -467,9 +569,13 @@ namespace Project_SoftwareOntwikkeling
                         scorespeler2++;
                         lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
                     }
+                    Winnaarfeliciteren();
                 }
                 else
                 {
+                    streak = 0;
+                    StreakTeller.Text = Convert.ToString(streak);
+                    Opslagbox1.Enabled = true;
                     timer3.Start();
                 }
             }
@@ -481,6 +587,7 @@ namespace Project_SoftwareOntwikkeling
             if (Opslagbox1 == null)
             {
                 Opslagbox1 = DupCard6;
+                Opslagbox1.Enabled = false;
             }
             else if (Opslagbox1 != null && Opslagbox2 == null)
             {
@@ -490,6 +597,10 @@ namespace Project_SoftwareOntwikkeling
             {
                 if (Opslagbox1.Tag == Opslagbox2.Tag)
                 {
+                    streak++;
+                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
+                    StreakTeller.Text = Convert.ToString(streak);
+                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
                     Opslagbox1 = null;
                     Opslagbox2 = null;
                     Card6.Enabled = false;
@@ -504,9 +615,13 @@ namespace Project_SoftwareOntwikkeling
                         scorespeler2++;
                         lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
                     }
+                    Winnaarfeliciteren();
                 }
                 else
                 {
+                    streak = 0;
+                    StreakTeller.Text = Convert.ToString(streak);
+                    Opslagbox1.Enabled = true;
                     timer3.Start();
                 }
             }
@@ -518,6 +633,7 @@ namespace Project_SoftwareOntwikkeling
             if (Opslagbox1 == null)
             {
                 Opslagbox1 = Card7;
+                Opslagbox1.Enabled = false;
             }
             else if (Opslagbox1 != null && Opslagbox2 == null)
             {
@@ -527,6 +643,10 @@ namespace Project_SoftwareOntwikkeling
             {
                 if (Opslagbox1.Tag == Opslagbox2.Tag)
                 {
+                    streak++;
+                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
+                    StreakTeller.Text = Convert.ToString(streak);
+                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
                     Opslagbox1 = null;
                     Opslagbox2 = null;
                     Card7.Enabled = false;
@@ -541,9 +661,13 @@ namespace Project_SoftwareOntwikkeling
                         scorespeler2++;
                         lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
                     }
+                    Winnaarfeliciteren();
                 }
                 else
                 {
+                    streak = 0;
+                    StreakTeller.Text = Convert.ToString(streak);
+                    Opslagbox1.Enabled = true;
                     timer3.Start();
                 }
             }
@@ -555,6 +679,7 @@ namespace Project_SoftwareOntwikkeling
             if (Opslagbox1 == null)
             {
                 Opslagbox1 = DupCard7;
+                Opslagbox1.Enabled = false;
             }
             else if (Opslagbox1 != null && Opslagbox2 == null)
             {
@@ -564,6 +689,10 @@ namespace Project_SoftwareOntwikkeling
             {
                 if (Opslagbox1.Tag == Opslagbox2.Tag)
                 {
+                    streak++;
+                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
+                    StreakTeller.Text = Convert.ToString(streak);
+                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
                     Opslagbox1 = null;
                     Opslagbox2 = null;
                     Card7.Enabled = false;
@@ -578,9 +707,13 @@ namespace Project_SoftwareOntwikkeling
                         scorespeler2++;
                         lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
                     }
+                    Winnaarfeliciteren();
                 }
                 else
                 {
+                    streak = 0;
+                    StreakTeller.Text = Convert.ToString(streak);
+                    Opslagbox1.Enabled = true;
                     timer3.Start();
                 }
             }
@@ -592,6 +725,7 @@ namespace Project_SoftwareOntwikkeling
             if (Opslagbox1 == null)
             {
                 Opslagbox1 = Card8;
+                Opslagbox1.Enabled = false;
             }
             else if (Opslagbox1 != null && Opslagbox2 == null)
             {
@@ -601,6 +735,10 @@ namespace Project_SoftwareOntwikkeling
             {
                 if (Opslagbox1.Tag == Opslagbox2.Tag)
                 {
+                    streak++;
+                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
+                    StreakTeller.Text = Convert.ToString(streak);
+                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
                     Opslagbox1 = null;
                     Opslagbox2 = null;
                     Card8.Enabled = false;
@@ -615,9 +753,13 @@ namespace Project_SoftwareOntwikkeling
                         scorespeler2++;
                         lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
                     }
+                    Winnaarfeliciteren();
                 }
                 else
                 {
+                    streak = 0;
+                    StreakTeller.Text = Convert.ToString(streak);
+                    Opslagbox1.Enabled = true;
                     timer3.Start();
                 }
             }
@@ -630,6 +772,7 @@ namespace Project_SoftwareOntwikkeling
             if (Opslagbox1 == null)
             {
                 Opslagbox1 = DupCard8;
+                Opslagbox1.Enabled = false;
             }
             else if (Opslagbox1 != null && Opslagbox2 == null)
             {
@@ -639,6 +782,10 @@ namespace Project_SoftwareOntwikkeling
             {
                 if (Opslagbox1.Tag == Opslagbox2.Tag)
                 {
+                    streak++;
+                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
+                    StreakTeller.Text = Convert.ToString(streak);
+                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
                     Opslagbox1 = null;
                     Opslagbox2 = null;
                     Card8.Enabled = false;
@@ -653,9 +800,13 @@ namespace Project_SoftwareOntwikkeling
                         scorespeler2++;
                         lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
                     }
+                    Winnaarfeliciteren();
                 }
                 else
                 {
+                    streak = 0;
+                    StreakTeller.Text = Convert.ToString(streak);
+                    Opslagbox1.Enabled = true;
                     timer3.Start();
                 }
             }
@@ -666,6 +817,8 @@ namespace Project_SoftwareOntwikkeling
 
         private void Memory_Load(object sender, EventArgs e)
         {
+            label1.Text = naam1;
+            label2.Text = naam2;
            
             VulLijst(); //Roept de methode VulLijst
             ShuffleKaarten();//Roept de methode ShuffleKaarten()
@@ -730,5 +883,15 @@ namespace Project_SoftwareOntwikkeling
             }
         }
         #endregion
+        private void Winnaarfeliciteren()
+        {
+            if (scorespeler1 + scorespeler2 == 8)
+            {
+                if (scorespeler1 > scorespeler2) { MessageBox.Show(naam1 + " heeft gewonnen!"); }
+                if (scorespeler1 < scorespeler2) { MessageBox.Show(naam2 + " heeft gewonnen!"); }
+                if (scorespeler1==scorespeler2) { MessageBox.Show("Gelijkspel!"); }
+            }
+                
+        }
     }
 }

@@ -19,8 +19,8 @@ namespace Project_SoftwareOntwikkeling
 
         private void btn_start_Click(object sender, EventArgs e)
         {
-            Memory mem = new Memory();
-            mem.Show();
+            Namen nameninvoeren = new Namen();
+            nameninvoeren.Show();
             this.Hide();
         }
     }

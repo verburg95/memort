@@ -40,3 +40,4 @@ C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwik
 C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.csproj.CoreCompileInputs.cache
 C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.exe.manifest
 C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.application
+C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project_SoftwareOntwikkeling.Namen.resources
