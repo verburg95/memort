@@ -17,8 +17,8 @@ namespace Project_SoftwareOntwikkeling
         int scorespeler1 = 0;
         int scorespeler2 = 0;
         int beurt = 1;
-        public string naam1 = "Speler 1";
-        public string naam2 = "Speler 2";
+        string naam1 = "Speler 1";
+        string naam2 = "Speler 2";
         int streak = 0;
         int hoogstestreak = 0;
         string recordhouder;
@@ -27,12 +27,31 @@ namespace Project_SoftwareOntwikkeling
         Random locatie = new Random(); //Kiest een willekeurig getal van de X en Y lijsten en geeft zo aan de kaarten een locatie
         List<Point> locaties = new List<Point>(); // Lijst die gevuld word door VulLijst() met locaties van pictureboxes
         PictureBox Opslagbox1, Opslagbox2; // Opslag voor kaarten die open moeten blijven
-        
+
         #endregion
-        
-        public Memory()
+
+        PictureBox[] boxes = new PictureBox[16];
+
+        public Memory(string naam1, string naam2)
         {
+            this.naam1 = naam1;
+            this.naam2 = naam2;
+
             InitializeComponent();
+
+            //label1.Text = naam1;
+
+
+            //for (int i = 0; i < boxes.Length; i++)
+            //{
+            //    PictureBox b = new PictureBox();
+            //    //b.Location = 
+            //    //  b.Image =
+            //    b.Click += new System.EventHandler(this.DupCard8_Click);
+            //    boxes[i] = b;
+            //    pnl_CardHolder
+
+            //}
         }
         #region timers
         private void timer1_Tick(object sender, EventArgs e)
@@ -768,6 +787,9 @@ namespace Project_SoftwareOntwikkeling
        
         private void DupCard8_Click(object sender, EventArgs e)
         {
+            PictureBox box = sender as PictureBox;
+
+
             DupCard8.Image = Properties.Resources.Card8;
             if (Opslagbox1 == null)
             {
@@ -819,6 +841,7 @@ namespace Project_SoftwareOntwikkeling
         {
             label1.Text = naam1;
             label2.Text = naam2;
+            labelBeurt.Text = naam1 + " is aan de beurt.";
            
             VulLijst(); //Roept de methode VulLijst
             ShuffleKaarten();//Roept de methode ShuffleKaarten()
@@ -853,7 +876,7 @@ namespace Project_SoftwareOntwikkeling
         #region buttons
         private void resetknop_Click(object sender, EventArgs e)
         {
-            Memory reset = new Memory();
+            Memory reset = new Memory("","");
             reset.Show();
             this.Dispose(false);
         }

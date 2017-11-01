@@ -27,7 +27,7 @@ namespace Project_SoftwareOntwikkeling
             string naam1 = textBox1.Text;
             string naam2 = textBox2.Text;
 
-            Memory mem = new Memory();
+            Memory mem = new Memory(naam1, naam2);
             mem.Show();
         }
 
