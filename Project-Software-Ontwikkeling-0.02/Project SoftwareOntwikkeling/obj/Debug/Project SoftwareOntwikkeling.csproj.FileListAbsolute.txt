@@ -1,43 +1,17 @@
-D:\Visual Studio Programmas\Project Software Ontwikkeling\Project SoftwareOntwikkeling\Project SoftwareOntwikkeling\bin\Debug\Project SoftwareOntwikkeling.exe.config
-D:\Visual Studio Programmas\Project Software Ontwikkeling\Project SoftwareOntwikkeling\Project SoftwareOntwikkeling\bin\Debug\Project SoftwareOntwikkeling.exe
-D:\Visual Studio Programmas\Project Software Ontwikkeling\Project SoftwareOntwikkeling\Project SoftwareOntwikkeling\bin\Debug\Project SoftwareOntwikkeling.pdb
-D:\Visual Studio Programmas\Project Software Ontwikkeling\Project SoftwareOntwikkeling\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.csprojResolveAssemblyReference.cache
-D:\Visual Studio Programmas\Project Software Ontwikkeling\Project SoftwareOntwikkeling\Project SoftwareOntwikkeling\obj\Debug\Project_SoftwareOntwikkeling.Form1.resources
-D:\Visual Studio Programmas\Project Software Ontwikkeling\Project SoftwareOntwikkeling\Project SoftwareOntwikkeling\obj\Debug\Project_SoftwareOntwikkeling.Properties.Resources.resources
-D:\Visual Studio Programmas\Project Software Ontwikkeling\Project SoftwareOntwikkeling\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.csproj.GenerateResource.Cache
-D:\Visual Studio Programmas\Project Software Ontwikkeling\Project SoftwareOntwikkeling\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.csproj.CoreCompileInputs.cache
-D:\Visual Studio Programmas\Project Software Ontwikkeling\Project SoftwareOntwikkeling\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.exe
-D:\Visual Studio Programmas\Project Software Ontwikkeling\Project SoftwareOntwikkeling\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.pdb
-C:\Users\Hidde\source\repos\Project-Software-Ontwikkeling\Project SoftwareOntwikkeling\bin\Debug\Project SoftwareOntwikkeling.exe.config
-C:\Users\Hidde\source\repos\Project-Software-Ontwikkeling\Project SoftwareOntwikkeling\bin\Debug\Project SoftwareOntwikkeling.exe
-C:\Users\Hidde\source\repos\Project-Software-Ontwikkeling\Project SoftwareOntwikkeling\bin\Debug\Project SoftwareOntwikkeling.pdb
-C:\Users\Hidde\source\repos\Project-Software-Ontwikkeling\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.csprojResolveAssemblyReference.cache
-C:\Users\Hidde\source\repos\Project-Software-Ontwikkeling\Project SoftwareOntwikkeling\obj\Debug\Project_SoftwareOntwikkeling.Memory.resources
-C:\Users\Hidde\source\repos\Project-Software-Ontwikkeling\Project SoftwareOntwikkeling\obj\Debug\Project_SoftwareOntwikkeling.Properties.Resources.resources
-C:\Users\Hidde\source\repos\Project-Software-Ontwikkeling\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.csproj.GenerateResource.Cache
-C:\Users\Hidde\source\repos\Project-Software-Ontwikkeling\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.csproj.CoreCompileInputs.cache
-C:\Users\Hidde\source\repos\Project-Software-Ontwikkeling\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.exe
-C:\Users\Hidde\source\repos\Project-Software-Ontwikkeling\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.pdb
-C:\Users\Hidde\source\repos\Project-Software-Ontwikkeling\Project SoftwareOntwikkeling\bin\Debug\Project SoftwareOntwikkeling.exe.manifest
-C:\Users\Hidde\source\repos\Project-Software-Ontwikkeling\Project SoftwareOntwikkeling\bin\Debug\Project SoftwareOntwikkeling.application
-C:\Users\Hidde\source\repos\Project-Software-Ontwikkeling\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.exe.manifest
-C:\Users\Hidde\source\repos\Project-Software-Ontwikkeling\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.application
-C:\Users\Hidde\source\repos\Project-Software-Ontwikkeling\Project SoftwareOntwikkeling\obj\Debug\Project_SoftwareOntwikkeling.Savegame.resources
-C:\Users\Hidde\source\repos\Project-Software-Ontwikkeling\Project SoftwareOntwikkeling\obj\Debug\Project_SoftwareOntwikkeling.Hoofdmenu.resources
-C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.csprojResolveAssemblyReference.cache
-C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project_SoftwareOntwikkeling.Memory.resources
-C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project_SoftwareOntwikkeling.Hoofdmenu.resources
-C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project_SoftwareOntwikkeling.Properties.Resources.resources
-C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project_SoftwareOntwikkeling.Savegame.resources
-C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.csproj.GenerateResource.Cache
-C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.exe
-C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.pdb
 C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\bin\Debug\Project SoftwareOntwikkeling.exe.config
 C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\bin\Debug\Project SoftwareOntwikkeling.exe.manifest
 C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\bin\Debug\Project SoftwareOntwikkeling.application
 C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\bin\Debug\Project SoftwareOntwikkeling.exe
-C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\bin\Debug\Project SoftwareOntwikkeling.pdb
+C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.csprojResolveAssemblyReference.cache
+C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project_SoftwareOntwikkeling.Memory.resources
+C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project_SoftwareOntwikkeling.Namen.resources
+C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project_SoftwareOntwikkeling.Hoofdmenu.resources
+C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project_SoftwareOntwikkeling.Properties.Resources.resources
+C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project_SoftwareOntwikkeling.Savegame.resources
+C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.csproj.GenerateResource.Cache
 C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.csproj.CoreCompileInputs.cache
 C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.exe.manifest
 C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.application
-C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project_SoftwareOntwikkeling.Namen.resources
+C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.exe
+C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\obj\Debug\Project SoftwareOntwikkeling.pdb
+C:\Users\david\Desktop\Project-Software-Ontwikkeling-0.02\Project SoftwareOntwikkeling\bin\Debug\Project SoftwareOntwikkeling.pdb

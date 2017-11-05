@@ -44,8 +44,8 @@
             this.Card3 = new System.Windows.Forms.PictureBox();
             this.DupCard2 = new System.Windows.Forms.PictureBox();
             this.Card2 = new System.Windows.Forms.PictureBox();
-            this.DupCard1 = new System.Windows.Forms.PictureBox();
-            this.Card1 = new System.Windows.Forms.PictureBox();
+            this.Kaart1b = new System.Windows.Forms.PictureBox();
+            this.Kaart1 = new System.Windows.Forms.PictureBox();
             this.lbl_scorecounter1 = new System.Windows.Forms.Label();
             this.lbl_scorecounter2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -77,8 +77,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Card3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DupCard2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Card2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DupCard1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Card1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Kaart1b)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Kaart1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_CardHolder
@@ -97,8 +97,8 @@
             this.pnl_CardHolder.Controls.Add(this.Card3);
             this.pnl_CardHolder.Controls.Add(this.DupCard2);
             this.pnl_CardHolder.Controls.Add(this.Card2);
-            this.pnl_CardHolder.Controls.Add(this.DupCard1);
-            this.pnl_CardHolder.Controls.Add(this.Card1);
+            this.pnl_CardHolder.Controls.Add(this.Kaart1b);
+            this.pnl_CardHolder.Controls.Add(this.Kaart1);
             this.pnl_CardHolder.Location = new System.Drawing.Point(12, 12);
             this.pnl_CardHolder.Name = "pnl_CardHolder";
             this.pnl_CardHolder.Size = new System.Drawing.Size(900, 900);
@@ -272,29 +272,29 @@
             this.Card2.Tag = "2";
             this.Card2.Click += new System.EventHandler(this.Card2_Click);
             // 
-            // DupCard1
+            // Kaart1b
             // 
-            this.DupCard1.InitialImage = null;
-            this.DupCard1.Location = new System.Drawing.Point(226, 3);
-            this.DupCard1.Name = "DupCard1";
-            this.DupCard1.Size = new System.Drawing.Size(200, 200);
-            this.DupCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.DupCard1.TabIndex = 4;
-            this.DupCard1.TabStop = false;
-            this.DupCard1.Tag = "1";
-            this.DupCard1.Click += new System.EventHandler(this.DupCard1_Click);
+            this.Kaart1b.InitialImage = null;
+            this.Kaart1b.Location = new System.Drawing.Point(226, 3);
+            this.Kaart1b.Name = "Kaart1b";
+            this.Kaart1b.Size = new System.Drawing.Size(200, 200);
+            this.Kaart1b.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.Kaart1b.TabIndex = 4;
+            this.Kaart1b.TabStop = false;
+            this.Kaart1b.Tag = "1";
+            this.Kaart1b.Click += new System.EventHandler(this.Kaart1b_Click);
             // 
-            // Card1
+            // Kaart1
             // 
-            this.Card1.InitialImage = null;
-            this.Card1.Location = new System.Drawing.Point(3, 3);
-            this.Card1.Name = "Card1";
-            this.Card1.Size = new System.Drawing.Size(200, 200);
-            this.Card1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.Card1.TabIndex = 3;
-            this.Card1.TabStop = false;
-            this.Card1.Tag = "1";
-            this.Card1.Click += new System.EventHandler(this.Card1_Click);
+            this.Kaart1.InitialImage = null;
+            this.Kaart1.Location = new System.Drawing.Point(3, 3);
+            this.Kaart1.Name = "Kaart1";
+            this.Kaart1.Size = new System.Drawing.Size(200, 200);
+            this.Kaart1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.Kaart1.TabIndex = 3;
+            this.Kaart1.TabStop = false;
+            this.Kaart1.Tag = "1";
+            this.Kaart1.Click += new System.EventHandler(this.Kaart1_Click);
             // 
             // lbl_scorecounter1
             // 
@@ -320,11 +320,6 @@
             // 
             this.timer1.Interval = 2000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // timer2
-            // 
-            this.timer2.Interval = 1000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // timer3
             // 
@@ -468,8 +463,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Card3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DupCard2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Card2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DupCard1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Card1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Kaart1b)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Kaart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,7 +473,7 @@
         #endregion
 
         private System.Windows.Forms.Panel pnl_CardHolder;
-        private System.Windows.Forms.PictureBox Card1;
+        private System.Windows.Forms.PictureBox Kaart1;
         private System.Windows.Forms.Label lbl_scorecounter1;
         private System.Windows.Forms.PictureBox DupCard8;
         private System.Windows.Forms.PictureBox Card8;
@@ -494,7 +489,7 @@
         private System.Windows.Forms.PictureBox Card3;
         private System.Windows.Forms.PictureBox DupCard2;
         private System.Windows.Forms.PictureBox Card2;
-        private System.Windows.Forms.PictureBox DupCard1;
+        private System.Windows.Forms.PictureBox Kaart1b;
         private System.Windows.Forms.Label lbl_scorecounter2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;

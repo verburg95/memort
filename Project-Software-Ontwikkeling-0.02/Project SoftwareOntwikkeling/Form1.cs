@@ -65,10 +65,7 @@ namespace Project_SoftwareOntwikkeling
             }
         }
 
-        private void timer2_Tick(object sender, EventArgs e) 
-        {
-           
-        }
+
         private void timer3_Tick(object sender, EventArgs e) // Timer die start bij een match van 2 kaarten.
         {
 
@@ -88,100 +85,36 @@ namespace Project_SoftwareOntwikkeling
             }
 
         }
-#endregion
+        #endregion
         #region Kaarten
-        private void Card1_Click(object sender, EventArgs e)
+        private void Kaart1_Click(object sender, EventArgs e)
         {
-            Card1.Image = Properties.Resources.Card1;
-            if(Opslagbox1 == null)
+            Kaart1.Image = Properties.Resources.Card1;
+            if(Opslagbox1 == null) //eerste kaart
             {
-                Opslagbox1 = Card1;
-                Opslagbox1.Enabled = false;
+                Opslagbox1 = Kaart1;
+                Opslagbox1.Enabled = false; //zorgt ervoor dat je niet tweemaal op dezelfde kaart kunt klikken
             }
-            else if(Opslagbox1 != null && Opslagbox2 == null)
+            else if(Opslagbox1 != null && Opslagbox2 == null) //tweede kaart
             {
-                Opslagbox2 = Card1;
+                Opslagbox2 = Kaart1;
             }
-            if(Opslagbox1 != null && Opslagbox2 != null)
-            {
-                if(Opslagbox1.Tag == Opslagbox2.Tag)
-                {
-                    streak++;
-                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "("+recordhouder+")"; }
-                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
-                    StreakTeller.Text = Convert.ToString(streak);
-                    Opslagbox1 = null;
-                    Opslagbox2 = null;
-                    Card1.Enabled = false;
-                    DupCard1.Enabled = false;
-                    if (beurt == 1)
-                    {
-                        scorespeler1++;
-                        lbl_scorecounter1.Text = Convert.ToString(scorespeler1);
-                    }
-                    else if (beurt == -1)
-                    {
-                        scorespeler2++;
-                        lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
-                    }
-                    Winnaarfeliciteren();
-                }
-                else
-                {
-                    streak = 0;
-                    StreakTeller.Text = Convert.ToString(streak);
-                    Opslagbox1.Enabled = true;
-                    timer3.Start();
-                }
-               
-            }
+            tweekaartengeraden();// opent de method die de kaarten met elkaar vergelijkts
         }
 
-        private void DupCard1_Click(object sender, EventArgs e)
+        private void Kaart1b_Click(object sender, EventArgs e)
         {
-            DupCard1.Image = Properties.Resources.Card1;
+            Kaart1b.Image = Properties.Resources.Card1;
             if (Opslagbox1 == null)
             {
-                Opslagbox1 = DupCard1;
+                Opslagbox1 = Kaart1b;
                 Opslagbox1.Enabled = false;
             }
             else if (Opslagbox1 != null && Opslagbox2 == null)
             {
-                Opslagbox2 = DupCard1;
+                Opslagbox2 = Kaart1b;
             }
-            if (Opslagbox1 != null && Opslagbox2 != null)
-            {
-                if (Opslagbox1.Tag == Opslagbox2.Tag)
-                {
-                    streak++;
-                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
-                    StreakTeller.Text = Convert.ToString(streak);
-                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
-                    Opslagbox1 = null;
-                    Opslagbox2 = null;
-                    Card1.Enabled = false;
-                    DupCard1.Enabled = false;
-                    if (beurt == 1)
-                    {
-                        scorespeler1++;
-                        lbl_scorecounter1.Text = Convert.ToString(scorespeler1);
-                    }
-                    else if (beurt == -1)
-                    {
-                        scorespeler2++;
-                        lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
-                    }
-                    Winnaarfeliciteren();
-                }
-                else
-                {
-                    streak = 0;
-                    StreakTeller.Text = Convert.ToString(streak);
-                    Opslagbox1.Enabled = true;
-                    timer3.Start();
-                }
-                
-            }
+            tweekaartengeraden();
         }
 
         private void Card2_Click(object sender, EventArgs e)
@@ -196,39 +129,7 @@ namespace Project_SoftwareOntwikkeling
             {
                 Opslagbox2 = Card2;
             }
-            if (Opslagbox1 != null && Opslagbox2 != null)
-            {
-                if (Opslagbox1.Tag == Opslagbox2.Tag)
-                {
-                    streak++;
-                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
-                    StreakTeller.Text = Convert.ToString(streak);
-                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
-                    Opslagbox1 = null;
-                    Opslagbox2 = null;
-                    Card2.Enabled = false;
-                    DupCard2.Enabled = false;
-                    if (beurt == 1)
-                    {
-                        scorespeler1++;
-                        lbl_scorecounter1.Text = Convert.ToString(scorespeler1);
-                    }
-                    else if (beurt == -1)
-                    {
-                        scorespeler2++;
-                        lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
-                    }
-                    Winnaarfeliciteren();
-                }
-                else
-                {
-                    streak = 0;
-                    StreakTeller.Text = Convert.ToString(streak);
-                    Opslagbox1.Enabled = true;
-                    timer3.Start();
-                }
-                
-            }
+            tweekaartengeraden();
         }
 
         private void DupCard2_Click(object sender, EventArgs e)
@@ -243,39 +144,7 @@ namespace Project_SoftwareOntwikkeling
             {
                 Opslagbox2 = DupCard2;
             }
-            if (Opslagbox1 != null && Opslagbox2 != null)
-            {
-                if (Opslagbox1.Tag == Opslagbox2.Tag)
-                {
-                    streak++;
-                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
-                    StreakTeller.Text = Convert.ToString(streak);
-                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
-                    Opslagbox1 = null;
-                    Opslagbox2 = null;
-                    Card2.Enabled = false;
-                    DupCard2.Enabled = false;
-                    if (beurt == 1)
-                    {
-                        scorespeler1++;
-                        lbl_scorecounter1.Text = Convert.ToString(scorespeler1);
-                    }
-                    else if (beurt == -1)
-                    {
-                        scorespeler2++;
-                        lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
-                    }
-                    Winnaarfeliciteren();
-                }
-                else
-                {
-                    streak = 0;
-                    StreakTeller.Text = Convert.ToString(streak);
-                    Opslagbox1.Enabled = true;
-                    timer3.Start();
-                }
-                
-            }
+            tweekaartengeraden();
         }
 
         private void Card3_Click(object sender, EventArgs e)
@@ -290,38 +159,7 @@ namespace Project_SoftwareOntwikkeling
             {
                 Opslagbox2 = Card3;
             }
-            if (Opslagbox1 != null && Opslagbox2 != null)
-            {
-                if (Opslagbox1.Tag == Opslagbox2.Tag)
-                {
-                    streak++;
-                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
-                    StreakTeller.Text = Convert.ToString(streak);
-                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
-                    Opslagbox1 = null;
-                    Opslagbox2 = null;
-                    Card3.Enabled = false;
-                    DupCard3.Enabled = false;
-                    if (beurt == 1)
-                    {
-                        scorespeler1++;
-                        lbl_scorecounter1.Text = Convert.ToString(scorespeler1);
-                    }
-                    else if (beurt == -1)
-                    {
-                        scorespeler2++;
-                        lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
-                    }
-                    Winnaarfeliciteren();
-                }
-                else
-                {
-                    streak = 0;
-                    StreakTeller.Text = Convert.ToString(streak);
-                    Opslagbox1.Enabled = true;
-                    timer3.Start();
-                }
-            }
+            tweekaartengeraden();
         }
 
         private void DupCard3_Click(object sender, EventArgs e)
@@ -336,38 +174,7 @@ namespace Project_SoftwareOntwikkeling
             {
                 Opslagbox2 = DupCard3;
             }
-            if (Opslagbox1 != null && Opslagbox2 != null)
-            {
-                if (Opslagbox1.Tag == Opslagbox2.Tag)
-                {
-                    streak++;
-                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
-                    StreakTeller.Text = Convert.ToString(streak);
-                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
-                    Opslagbox1 = null;
-                    Opslagbox2 = null;
-                    Card3.Enabled = false;
-                    DupCard3.Enabled = false;
-                    if (beurt == 1)
-                    {
-                        scorespeler1++;
-                        lbl_scorecounter1.Text = Convert.ToString(scorespeler1);
-                    }
-                    else if (beurt == -1)
-                    {
-                        scorespeler2++;
-                        lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
-                    }
-                    Winnaarfeliciteren();
-                }
-                else
-                {
-                    streak = 0;
-                    StreakTeller.Text = Convert.ToString(streak);
-                    Opslagbox1.Enabled = true;
-                    timer3.Start();
-                }
-            }
+            tweekaartengeraden();
         }
 
         private void Card4_Click(object sender, EventArgs e)
@@ -382,40 +189,8 @@ namespace Project_SoftwareOntwikkeling
             {
                 Opslagbox2 = Card4;
             }
-            if (Opslagbox1 != null && Opslagbox2 != null)
-            {
-                if (Opslagbox1.Tag == Opslagbox2.Tag)
-                {
-                    streak++;
-                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
-                    StreakTeller.Text = Convert.ToString(streak);
-                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
-                    Opslagbox1 = null;
-                    Opslagbox2 = null;
-                    Card4.Enabled = false;
-                    DupCard4.Enabled = false;
-                    if (beurt == 1)
-                    {
-                        scorespeler1++;
-                        lbl_scorecounter1.Text = Convert.ToString(scorespeler1);
-                    }
-                    else if (beurt == -1)
-                    {
-                        scorespeler2++;
-                        lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
-                    }
-                    Winnaarfeliciteren();
-                }
-                else
-                {
-                    streak = 0;
-                    StreakTeller.Text = Convert.ToString(streak);
-                    Opslagbox1.Enabled = true;
-                    timer3.Start();
-                }
-            }
+            tweekaartengeraden();
         }
-
         private void DupCard4_Click(object sender, EventArgs e)
         {
             DupCard4.Image = Properties.Resources.Card4;
@@ -428,38 +203,7 @@ namespace Project_SoftwareOntwikkeling
             {
                 Opslagbox2 = DupCard4;
             }
-            if (Opslagbox1 != null && Opslagbox2 != null)
-            {
-                if (Opslagbox1.Tag == Opslagbox2.Tag)
-                {
-                    streak++;
-                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
-                    StreakTeller.Text = Convert.ToString(streak);
-                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
-                    Opslagbox1 = null;
-                    Opslagbox2 = null;
-                    Card4.Enabled = false;
-                    DupCard4.Enabled = false;
-                    if (beurt == 1)
-                    {
-                        scorespeler1++;
-                        lbl_scorecounter1.Text = Convert.ToString(scorespeler1);
-                    }
-                    else if (beurt == -1)
-                    {
-                        scorespeler2++;
-                        lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
-                    }
-                    Winnaarfeliciteren();
-                }
-                else
-                {
-                    streak = 0;
-                    StreakTeller.Text = Convert.ToString(streak);
-                    Opslagbox1.Enabled = true;
-                    timer3.Start();
-                }
-            }
+            tweekaartengeraden();
         }
 
         private void Card5_Click(object sender, EventArgs e)
@@ -474,38 +218,7 @@ namespace Project_SoftwareOntwikkeling
             {
                 Opslagbox2 = Card5;
             }
-            if (Opslagbox1 != null && Opslagbox2 != null)
-            {
-                if (Opslagbox1.Tag == Opslagbox2.Tag)
-                {
-                    streak++;
-                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
-                    StreakTeller.Text = Convert.ToString(streak);
-                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
-                    Opslagbox1 = null;
-                    Opslagbox2 = null;
-                    Card5.Enabled = false;
-                    DupCard5.Enabled = false;
-                    if (beurt == 1)
-                    {
-                        scorespeler1++;
-                        lbl_scorecounter1.Text = Convert.ToString(scorespeler1);
-                    }
-                    else if (beurt == -1)
-                    {
-                        scorespeler2++;
-                        lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
-                    }
-                    Winnaarfeliciteren();
-                }
-                else
-                {
-                    streak = 0;
-                    StreakTeller.Text = Convert.ToString(streak);
-                    Opslagbox1.Enabled = true;
-                    timer3.Start();
-                }
-            }
+            tweekaartengeraden();
         }
 
         private void DupCard5_Click(object sender, EventArgs e)
@@ -520,38 +233,7 @@ namespace Project_SoftwareOntwikkeling
             {
                 Opslagbox2 = DupCard5;
             }
-            if (Opslagbox1 != null && Opslagbox2 != null)
-            {
-                if (Opslagbox1.Tag == Opslagbox2.Tag)
-                {
-                    streak++;
-                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
-                    StreakTeller.Text = Convert.ToString(streak);
-                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
-                    Opslagbox1 = null;
-                    Opslagbox2 = null;
-                    Card5.Enabled = false;
-                    DupCard5.Enabled = false;
-                    if (beurt == 1)
-                    {
-                        scorespeler1++;
-                        lbl_scorecounter1.Text = Convert.ToString(scorespeler1);
-                    }
-                    else if (beurt == -1)
-                    {
-                        scorespeler2++;
-                        lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
-                    }
-                    Winnaarfeliciteren();
-                }
-                else
-                {
-                    streak = 0;
-                    StreakTeller.Text = Convert.ToString(streak);
-                    Opslagbox1.Enabled = true;
-                    timer3.Start();
-                }
-            }
+            tweekaartengeraden();
         }
 
         private void Card6_Click(object sender, EventArgs e)
@@ -566,38 +248,7 @@ namespace Project_SoftwareOntwikkeling
             {
                 Opslagbox2 = Card6;
             }
-            if (Opslagbox1 != null && Opslagbox2 != null)
-            {
-                if (Opslagbox1.Tag == Opslagbox2.Tag)
-                {
-                    streak++;
-                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
-                    StreakTeller.Text = Convert.ToString(streak);
-                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
-                    Opslagbox1 = null;
-                    Opslagbox2 = null;
-                    Card6.Enabled = false;
-                    DupCard6.Enabled = false;
-                    if (beurt == 1)
-                    {
-                        scorespeler1++;
-                        lbl_scorecounter1.Text = Convert.ToString(scorespeler1);
-                    }
-                    else if (beurt == -1)
-                    {
-                        scorespeler2++;
-                        lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
-                    }
-                    Winnaarfeliciteren();
-                }
-                else
-                {
-                    streak = 0;
-                    StreakTeller.Text = Convert.ToString(streak);
-                    Opslagbox1.Enabled = true;
-                    timer3.Start();
-                }
-            }
+            tweekaartengeraden();
         }
 
         private void DupCard6_Click(object sender, EventArgs e)
@@ -612,38 +263,7 @@ namespace Project_SoftwareOntwikkeling
             {
                 Opslagbox2 = DupCard6;
             }
-            if (Opslagbox1 != null && Opslagbox2 != null)
-            {
-                if (Opslagbox1.Tag == Opslagbox2.Tag)
-                {
-                    streak++;
-                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
-                    StreakTeller.Text = Convert.ToString(streak);
-                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
-                    Opslagbox1 = null;
-                    Opslagbox2 = null;
-                    Card6.Enabled = false;
-                    DupCard6.Enabled = false;
-                    if (beurt == 1)
-                    {
-                        scorespeler1++;
-                        lbl_scorecounter1.Text = Convert.ToString(scorespeler1);
-                    }
-                    else if (beurt == -1)
-                    {
-                        scorespeler2++;
-                        lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
-                    }
-                    Winnaarfeliciteren();
-                }
-                else
-                {
-                    streak = 0;
-                    StreakTeller.Text = Convert.ToString(streak);
-                    Opslagbox1.Enabled = true;
-                    timer3.Start();
-                }
-            }
+            tweekaartengeraden();
         }
 
         private void Card7_Click(object sender, EventArgs e)
@@ -658,38 +278,7 @@ namespace Project_SoftwareOntwikkeling
             {
                 Opslagbox2 = Card7;
             }
-            if (Opslagbox1 != null && Opslagbox2 != null)
-            {
-                if (Opslagbox1.Tag == Opslagbox2.Tag)
-                {
-                    streak++;
-                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
-                    StreakTeller.Text = Convert.ToString(streak);
-                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
-                    Opslagbox1 = null;
-                    Opslagbox2 = null;
-                    Card7.Enabled = false;
-                    DupCard7.Enabled = false;
-                    if (beurt == 1)
-                    {
-                        scorespeler1++;
-                        lbl_scorecounter1.Text = Convert.ToString(scorespeler1);
-                    }
-                    else if (beurt == -1)
-                    {
-                        scorespeler2++;
-                        lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
-                    }
-                    Winnaarfeliciteren();
-                }
-                else
-                {
-                    streak = 0;
-                    StreakTeller.Text = Convert.ToString(streak);
-                    Opslagbox1.Enabled = true;
-                    timer3.Start();
-                }
-            }
+            tweekaartengeraden();
         }
 
         private void DupCard7_Click(object sender, EventArgs e)
@@ -704,38 +293,7 @@ namespace Project_SoftwareOntwikkeling
             {
                 Opslagbox2 = DupCard7;
             }
-            if (Opslagbox1 != null && Opslagbox2 != null)
-            {
-                if (Opslagbox1.Tag == Opslagbox2.Tag)
-                {
-                    streak++;
-                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
-                    StreakTeller.Text = Convert.ToString(streak);
-                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
-                    Opslagbox1 = null;
-                    Opslagbox2 = null;
-                    Card7.Enabled = false;
-                    DupCard7.Enabled = false;
-                    if (beurt == 1)
-                    {
-                        scorespeler1++;
-                        lbl_scorecounter1.Text = Convert.ToString(scorespeler1);
-                    }
-                    else if (beurt == -1)
-                    {
-                        scorespeler2++;
-                        lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
-                    }
-                    Winnaarfeliciteren();
-                }
-                else
-                {
-                    streak = 0;
-                    StreakTeller.Text = Convert.ToString(streak);
-                    Opslagbox1.Enabled = true;
-                    timer3.Start();
-                }
-            }
+            tweekaartengeraden();
         }
 
         private void Card8_Click(object sender, EventArgs e)
@@ -750,41 +308,8 @@ namespace Project_SoftwareOntwikkeling
             {
                 Opslagbox2 = Card8;
             }
-            if (Opslagbox1 != null && Opslagbox2 != null)
-            {
-                if (Opslagbox1.Tag == Opslagbox2.Tag)
-                {
-                    streak++;
-                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
-                    StreakTeller.Text = Convert.ToString(streak);
-                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
-                    Opslagbox1 = null;
-                    Opslagbox2 = null;
-                    Card8.Enabled = false;
-                    DupCard8.Enabled = false;
-                    if (beurt == 1)
-                    {
-                        scorespeler1++;
-                        lbl_scorecounter1.Text = Convert.ToString(scorespeler1);
-                    }
-                    else if (beurt == -1)
-                    {
-                        scorespeler2++;
-                        lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
-                    }
-                    Winnaarfeliciteren();
-                }
-                else
-                {
-                    streak = 0;
-                    StreakTeller.Text = Convert.ToString(streak);
-                    Opslagbox1.Enabled = true;
-                    timer3.Start();
-                }
-            }
+            tweekaartengeraden();
         }
-
-       
         private void DupCard8_Click(object sender, EventArgs e)
         {
             PictureBox box = sender as PictureBox;
@@ -800,38 +325,8 @@ namespace Project_SoftwareOntwikkeling
             {
                 Opslagbox2 = DupCard8;
             }
-            if (Opslagbox1 != null && Opslagbox2 != null)
-            {
-                if (Opslagbox1.Tag == Opslagbox2.Tag)
-                {
-                    streak++;
-                    if (streak > hoogstestreak) { hoogstestreak = streak; if (beurt == 1) { recordhouder = naam1; }; if (beurt == -1) recordhouder = naam2; labelRecordhouder.Text = "(" + recordhouder + ")"; }
-                    StreakTeller.Text = Convert.ToString(streak);
-                    StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
-                    Opslagbox1 = null;
-                    Opslagbox2 = null;
-                    Card8.Enabled = false;
-                    DupCard8.Enabled = false;
-                    if (beurt == 1)
-                    {
-                        scorespeler1++;
-                        lbl_scorecounter1.Text = Convert.ToString(scorespeler1);
-                    }
-                    else if (beurt == -1)
-                    {
-                        scorespeler2++;
-                        lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
-                    }
-                    Winnaarfeliciteren();
-                }
-                else
-                {
-                    streak = 0;
-                    StreakTeller.Text = Convert.ToString(streak);
-                    Opslagbox1.Enabled = true;
-                    timer3.Start();
-                }
-            }
+            tweekaartengeraden();
+
 
         }
         #endregion
@@ -848,14 +343,12 @@ namespace Project_SoftwareOntwikkeling
             foreach (PictureBox picture in pnl_CardHolder.Controls)
             {
                 picture.Cursor = Cursors.Hand; // Verandert voor elke kaart de cursos in een hand
-
             }
-
-            timer2.Start(); //Start timer2
+            
             timer1.Start(); //Start timer1
 
-            Card1.Image = Properties.Resources.Cover2;
-            DupCard1.Image = Properties.Resources.Cover2;
+            Kaart1.Image = Properties.Resources.Cover2;
+            Kaart1b.Image = Properties.Resources.Cover2;
             Card2.Image = Properties.Resources.Cover2;
             DupCard2.Image = Properties.Resources.Cover2;
             Card3.Image = Properties.Resources.Cover2;
@@ -880,14 +373,13 @@ namespace Project_SoftwareOntwikkeling
             reset.Show();
             this.Dispose(false);
         }
-
         private void btn_savemenu_Click(object sender, EventArgs e)
         {
             Savegame SaveMenu = new Savegame();
             SaveMenu.Show();
         }
         #endregion
-        #region methods
+        
         private void VulLijst()
         {
             foreach (PictureBox picture in pnl_CardHolder.Controls) //Gaat alle pictureboxes in het panel bij langs en voegt hun huidige locaties toe aan onze lijst met punten.
@@ -905,16 +397,66 @@ namespace Project_SoftwareOntwikkeling
                 locaties.Remove(punt1);
             }
         }
-        #endregion
-        private void Winnaarfeliciteren()
+        private void Goedgeraden()
         {
+            streak++;
+            if (streak > hoogstestreak)
+            {
+                hoogstestreak = streak;
+                if (beurt == 1)
+                {
+                    recordhouder = naam1;
+                }
+                if (beurt == -1)
+                {
+                    recordhouder = naam2;
+                }
+                labelRecordhouder.Text = "(" + recordhouder + ")";
+            }
+            StreakTeller.Text = Convert.ToString(streak);
+            StreakRecordTeller.Text = Convert.ToString(hoogstestreak);
+            Opslagbox1.Enabled = false;
+            Opslagbox2.Enabled = false;
+            Opslagbox1 = null;
+            Opslagbox2 = null;
+            if (beurt == 1)
+            {
+                scorespeler1++;
+                lbl_scorecounter1.Text = Convert.ToString(scorespeler1);
+            }
+            else if (beurt == -1)
+            {
+                scorespeler2++;
+                lbl_scorecounter2.Text = Convert.ToString(scorespeler2);
+            }
             if (scorespeler1 + scorespeler2 == 8)
             {
                 if (scorespeler1 > scorespeler2) { MessageBox.Show(naam1 + " heeft gewonnen!"); }
                 if (scorespeler1 < scorespeler2) { MessageBox.Show(naam2 + " heeft gewonnen!"); }
-                if (scorespeler1==scorespeler2) { MessageBox.Show("Gelijkspel!"); }
+                if (scorespeler1 == scorespeler2) { MessageBox.Show("Gelijkspel!"); }
             }
-                
+        }
+        private void Foutgeraden()
+        {
+            streak = 0;
+            StreakTeller.Text = Convert.ToString(streak);
+            Opslagbox1.Enabled = true;
+            timer3.Start();
+        }
+        private void tweekaartengeraden()
+        {
+            if (Opslagbox1 != null && Opslagbox2 != null)
+            {
+                if (Opslagbox1.Tag == Opslagbox2.Tag)
+                {
+                    Goedgeraden();
+                }
+                else
+                {
+                    Foutgeraden();
+                }
+            }
         }
     }
 }
+
